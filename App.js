@@ -39,32 +39,6 @@ export default function App() {
   useEffect(() => {
     // Выполняем только для веб-версии
     if (Platform.OS === "web") {
-      // Отключение pull-to-refresh
-      const disablePullToRefresh = () => {
-        let touchStartY = 0;
-        let touchEndY = 0;
-
-        const onTouchStart = (event) => {
-          touchStartY = event.touches[0].clientY;
-        };
-
-        const onTouchMove = (event) => {
-          touchEndY = event.touches[0].clientY;
-
-          if (touchEndY > touchStartY && window.scrollY === 0) {
-            event.preventDefault();
-          }
-        };
-
-        document.addEventListener("touchstart", onTouchStart);
-        document.addEventListener("touchmove", onTouchMove, { passive: false });
-
-        return () => {
-          document.removeEventListener("touchstart", onTouchStart);
-          document.removeEventListener("touchmove", onTouchMove);
-        };
-      };
-
       // Блокировка контекстного меню
       const disableContextMenu = () => {
         const onContextMenu = (event) => event.preventDefault();
@@ -85,18 +59,78 @@ export default function App() {
         };
       };
 
-      const cleanupPullToRefresh = disablePullToRefresh();
       const cleanupContextMenu = disableContextMenu();
       const cleanupTextSelection = disableTextSelection();
 
       // Очистка событий при размонтировании
       return () => {
-        cleanupPullToRefresh();
         cleanupContextMenu();
         cleanupTextSelection();
       };
     }
   }, []);
+
+  // useEffect(() => {
+  //   // Выполняем только для веб-версии
+  //   if (Platform.OS === "web") {
+  //     // Отключение pull-to-refresh
+  //     const disablePullToRefresh = () => {
+  //       let touchStartY = 0;
+  //       let touchEndY = 0;
+
+  //       const onTouchStart = (event) => {
+  //         touchStartY = event.touches[0].clientY;
+  //       };
+
+  //       const onTouchMove = (event) => {
+  //         touchEndY = event.touches[0].clientY;
+
+  //         if (touchEndY > touchStartY && window.scrollY === 0) {
+  //           event.preventDefault();
+  //         }
+  //       };
+
+  //       document.addEventListener("touchstart", onTouchStart);
+  //       document.addEventListener("touchmove", onTouchMove, { passive: false });
+
+  //       return () => {
+  //         document.removeEventListener("touchstart", onTouchStart);
+  //         document.removeEventListener("touchmove", onTouchMove);
+  //       };
+  //     };
+
+  //     // Блокировка контекстного меню
+  //     const disableContextMenu = () => {
+  //       const onContextMenu = (event) => event.preventDefault();
+  //       document.addEventListener("contextmenu", onContextMenu);
+
+  //       return () => {
+  //         document.removeEventListener("contextmenu", onContextMenu);
+  //       };
+  //     };
+
+  //     // Блокировка выделения текста
+  //     const disableTextSelection = () => {
+  //       const onSelectStart = (event) => event.preventDefault();
+  //       document.addEventListener("selectstart", onSelectStart);
+
+  //       return () => {
+  //         document.removeEventListener("selectstart", onSelectStart);
+  //       };
+  //     };
+
+  //     const cleanupPullToRefresh = disablePullToRefresh();
+  //     const cleanupContextMenu = disableContextMenu();
+  //     const cleanupTextSelection = disableTextSelection();
+
+  //     // Очистка событий при размонтировании
+  //     return () => {
+  //       cleanupPullToRefresh();
+  //       cleanupContextMenu();
+  //       cleanupTextSelection();
+  //     };
+  //   }
+  // }, []);
 
   if (isCustomSplashVisible) {
     return (
