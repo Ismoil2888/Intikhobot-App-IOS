@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFFFFA",
+  "display": "standalone",
+  "lang": "en",
+  "name": "Интихоботи вакилони халқ - 2025",
+  "short_name": "Интихоботи вакилони халқ - 2025",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.hamidzoda_ismoil.ParlumonTj",
+      "id": "com.hamidzoda_ismoil.ParlumonTj"
+    }
+  ],
+  "prefer_related_applications": true
+}
