@@ -1,28 +1,65 @@
 {
   "expo": {
-    "name": "ParlumonTj",
+    "name": "Интихоботи вакилони халқ - 2025",
     "slug": "ParlumonTj",
-    "version": "1.0.0",
+    "platforms": ["ios", "android", "web"],
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "meta": {
+        "themeColor": "#FFFFFF",
+        "backgroundColor": "#FFFFFF",
+        "viewport": "width=device-width, initial-scale=1, shrink-to-fit=no"
+      },
+      "manifest": {
+        "short_name": "Интихобот - 2025",
+        "name": "Интихоботи вакилони халқ - 2025",
+        "start_url": ".",
+        "display": "standalone",
+        "background_color": "#FFFFFF",
+        "theme_color": "#3F0DD1",
+        "icons": [
+          {
+            "src": "./assets/int_pwa_icon_1024.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "./assets/int_pwa_icon_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      }
+    },
+    "version": "1.11",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/1024.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/appbasiclogo.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#FFFFFA"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "jsEngine": "hermes",
+      "minSdkVersion": 23,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/1024.png",
+        "backgroundColor": "#FFFFFA"
+      },
+      "package": "com.hamidzoda_ismoil.ParlumonTj"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "31e1d346-2477-492a-aab9-d892a1404ab5"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "updates": {
+      "enabled": false
     }
   }
 }
