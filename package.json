@@ -10,6 +10,7 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "build": "npx expo export:web",
+    "postbuild": "copy 404.html web-build\\",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d web-build"
   },

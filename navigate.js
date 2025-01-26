@@ -557,7 +557,7 @@ const AppNavigator = () => {
 const App = () => {
   return (
     <LanguageProvider>
-      <NavigationContainer>
+      <NavigationContainer basename="/Intikhobot-App-IOS">
         <AppNavigator />
       </NavigationContainer>
     </LanguageProvider>

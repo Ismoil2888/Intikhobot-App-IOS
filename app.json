@@ -13,7 +13,7 @@
       "manifest": {
         "short_name": "Интихобот - 2025",
         "name": "Интихоботи вакилони халқ - 2025",
-        "start_url": ".",
+        "start_url": "/Intikhobot-App-IOS/",
         "display": "standalone",
         "background_color": "#FFFFFF",
         "theme_color": "#3F0DD1",
