@@ -13,5 +13,6 @@
       "id": "com.hamidzoda_ismoil.ParlumonTj"
     }
   ],
-  "prefer_related_applications": true
+  "prefer_related_applications": true,
+  "theme_color": "#3F0DD1"
 }
