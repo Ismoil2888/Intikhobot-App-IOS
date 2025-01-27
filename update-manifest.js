@@ -76,12 +76,12 @@ fs.readFile(manifestPath, "utf8", (err, data) => {
     // Добавляем иконки
     manifest.icons = [
       {
-        src: "/icons/int_pwa_icon_512.png",
+        src: "/Intikhobot-App-IOS/icons/int_pwa_icon_512.png",
         sizes: "512x512",
         type: "image/png",
       },
       {
-        src: "/icons/int_pwa_icon_1024.png",
+        src: "/Intikhobot-App-IOS/icons/int_pwa_icon_1024.png",
         sizes: "1024x1024",
         type: "image/png",
       },

@@ -47,20 +47,35 @@ export default function App() {
         }
       };
 
-      window.addEventListener("beforeinstallprompt", (e) => {
+      const handleBeforeInstallPrompt = (e) => {
         e.preventDefault();
-        setDeferredPrompt(e); // Сохраняем событие для использования позже
-      });
+        setDeferredPrompt(e);
+        setShowPwaPrompt(true);
+      };
+
+      const handleAppInstalled = () => {
+        console.log("PWA установлено");
+        Alert.alert("Успех", "Приложение успешно установлено!");
+        setShowPwaPrompt(false);
+      };
+
+      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      window.addEventListener("appinstalled", handleAppInstalled);
 
       checkPwaInstalled();
+
+      return () => {
+        window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+        window.removeEventListener("appinstalled", handleAppInstalled);
+      };
     }
   }, []);
 
   const handleInstallPwa = () => {
     if (deferredPrompt) {
       console.log("Установка PWA: Показываем prompt");
-      deferredPrompt.prompt(); // Показать диалоговое окно
-  
+      deferredPrompt.prompt();
+
       deferredPrompt.userChoice
         .then((choiceResult) => {
           if (choiceResult.outcome === "accepted") {
@@ -70,7 +85,7 @@ export default function App() {
             console.log("PWA установка отклонена");
             Alert.alert("Отмена", "Установка была отклонена.");
           }
-          setDeferredPrompt(null); // Сбрасываем сохранённое событие
+          setDeferredPrompt(null);
         })
         .catch((error) => {
           console.error("Ошибка при обработке PWA установки:", error);
@@ -83,7 +98,7 @@ export default function App() {
         "Событие установки не вызвано браузером. Возможно, приложение уже установлено."
       );
     }
-  };  
+  };
 
   if (isCustomSplashVisible) {
     return (
