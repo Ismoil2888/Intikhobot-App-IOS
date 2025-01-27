@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Intikhobot-App-IOS/static/css/main.87cf1fc1.css",
-    "main.js": "/Intikhobot-App-IOS/static/js/main.12b083a9.js",
-    "static/js/360.f32c4e17.js": "/Intikhobot-App-IOS/static/js/360.f32c4e17.js",
+    "main.js": "/Intikhobot-App-IOS/static/js/main.4171cf78.js",
+    "static/js/360.cdab8b79.js": "/Intikhobot-App-IOS/static/js/360.cdab8b79.js",
     "static/media/appbasiclogo.png": "/Intikhobot-App-IOS/static/media/appbasiclogo.fd67b1ec18b2e269f1d4.png",
     "static/media/basiclogomainpage.png": "/Intikhobot-App-IOS/static/media/basiclogomainpage.fd67b1ec18b2e269f1d4.png",
     "static/media/image6.jpg": "/Intikhobot-App-IOS/static/media/image6.17d2293a02645186179a.jpg",
@@ -33,12 +33,12 @@
     "manifest.json": "/Intikhobot-App-IOS/manifest.json",
     "serve.json": "/Intikhobot-App-IOS/serve.json",
     "main.87cf1fc1.css.map": "/Intikhobot-App-IOS/static/css/main.87cf1fc1.css.map",
-    "main.12b083a9.js.map": "/Intikhobot-App-IOS/static/js/main.12b083a9.js.map",
-    "360.f32c4e17.js.map": "/Intikhobot-App-IOS/static/js/360.f32c4e17.js.map"
+    "main.4171cf78.js.map": "/Intikhobot-App-IOS/static/js/main.4171cf78.js.map",
+    "360.cdab8b79.js.map": "/Intikhobot-App-IOS/static/js/360.cdab8b79.js.map"
   },
   "entrypoints": [
-    "static/js/360.f32c4e17.js",
+    "static/js/360.cdab8b79.js",
     "static/css/main.87cf1fc1.css",
-    "static/js/main.12b083a9.js"
+    "static/js/main.4171cf78.js"
   ]
 }
