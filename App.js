@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Platform, View, StyleSheet, Button, Text } from "react-native";
+import { Platform, View, StyleSheet, Button, Text, Alert } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import * as Animatable from "react-native-animatable";
 import AppNavigator from "./navigate";
@@ -49,7 +49,7 @@ export default function App() {
 
       window.addEventListener("beforeinstallprompt", (e) => {
         e.preventDefault();
-        setDeferredPrompt(e);
+        setDeferredPrompt(e); // Сохраняем событие для использования позже
       });
 
       checkPwaInstalled();
@@ -58,17 +58,32 @@ export default function App() {
 
   const handleInstallPwa = () => {
     if (deferredPrompt) {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === "accepted") {
-          console.log("PWA установка принята");
-        } else {
-          console.log("PWA установка отклонена");
-        }
-        setDeferredPrompt(null);
-      });
+      console.log("Установка PWA: Показываем prompt");
+      deferredPrompt.prompt(); // Показать диалоговое окно
+  
+      deferredPrompt.userChoice
+        .then((choiceResult) => {
+          if (choiceResult.outcome === "accepted") {
+            console.log("PWA установка принята");
+            Alert.alert("Успех", "Приложение успешно установлено!");
+          } else {
+            console.log("PWA установка отклонена");
+            Alert.alert("Отмена", "Установка была отклонена.");
+          }
+          setDeferredPrompt(null); // Сбрасываем сохранённое событие
+        })
+        .catch((error) => {
+          console.error("Ошибка при обработке PWA установки:", error);
+          Alert.alert("Ошибка", "Не удалось обработать установку.");
+        });
+    } else {
+      console.log("Событие beforeinstallprompt недоступно.");
+      Alert.alert(
+        "Установка недоступна",
+        "Событие установки не вызвано браузером. Возможно, приложение уже установлено."
+      );
     }
-  };
+  };  
 
   if (isCustomSplashVisible) {
     return (
