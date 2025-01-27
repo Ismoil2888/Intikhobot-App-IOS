@@ -14,5 +14,17 @@
     }
   ],
   "prefer_related_applications": false,
-  "theme_color": "#3F0DD1"
+  "theme_color": "#3F0DD1",
+  "icons": [
+    {
+      "src": "/icons/int_pwa_icon_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/int_pwa_icon_1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
 }
